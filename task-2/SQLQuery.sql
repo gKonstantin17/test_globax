@@ -9,7 +9,7 @@ WITH RecursiveSubdivisions AS (
     
     UNION ALL
     
-    -- Recursive: находим все дочерние подразделения
+    -- Recursive: find Subdivisions
     SELECT 
         s.id,
         s.name,
