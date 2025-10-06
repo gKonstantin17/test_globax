@@ -12,7 +12,6 @@ npm install
 npm start
 ```
 
-Предложит решение исходя из условия:
 
 ![1](../img/task1.1.png)
 ![1](../img/task1.2.png)
