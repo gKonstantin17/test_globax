@@ -1,28 +1,24 @@
 import {useState} from "react";
+import {getAll, searchUsers} from "./api";
 
 function App() {
   const URL = `http://localhost:3000`;
   const [data,setData] = useState(null);
-  const [error,setError] = useState(null);
-  const getAll = async () => {
-    try {
-      const response = await fetch(URL);
 
-      if (!response.ok)
-        throw new Error(`HTTP error! status: ${response.status}`);
-
-      const result = await response.json();
-      setData(result);
-      return result;
-    } catch (e) {
-      setError(e)
-    }
+  const get = async () => {
+      const result = await getAll()
+      setData(result)
+  }
+  const search = async () => {
+      const result = await searchUsers('carney')
+      setData(result)
   }
 
 
   return (
     <div>
-      <button onClick={getAll}>Получить всех пользователей</button>
+      <button onClick={get}>Получить всех пользователей</button>
+      <button onClick={search}>Найти Carney</button>
       {data && (
           <pre>
           {JSON.stringify(data, null, 2)}
