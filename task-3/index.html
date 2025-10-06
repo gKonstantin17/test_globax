@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список сотрудников</title>
+</head>
+<body>
+     <h1>Список сотрудников</h1>
+    
+    <%
+    var employees = XQuery("for $elem in collaborators return $elem");
+
+    for (employee in employees) {
+    %>
+        <div><%= employee.fullname %></div>
+    <%
+        }
+    %>
+</body>
+</html>
